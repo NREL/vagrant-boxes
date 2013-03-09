@@ -5,9 +5,9 @@ Veewee::Session.declare({
   :disk_format => 'VDI',
   :hostiocache => 'off',
   :os_type_id => 'RedHat_64',
-  :iso_file => "CentOS-6.3-x86_64-minimal.iso",
-  :iso_src => "http://mirror.anl.gov/pub/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-minimal.iso",
-  :iso_md5 => "087713752fa88c03a5e8471c661ad1a2",
+  :iso_file => "CentOS-6.4-i386-minimal.iso",
+  :iso_src => "http://yum.singlehop.com/CentOS/6.4/isos/i386/CentOS-6.4-i386-minimal.iso",
+  :iso_md5 => "6b5c727fa76fcce7c9ab6213ad3df75a",
   :iso_download_timeout => 1000,
   :boot_wait => "10",
   :boot_cmd_sequence => [
