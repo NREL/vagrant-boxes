@@ -4,7 +4,7 @@ Veewee::Session.declare({
   :disk_size => '512000',
   :disk_format => 'VDI',
   :hostiocache => 'off',
-  :os_type_id => 'RedHat_64',
+  :os_type_id => 'RedHat',
   :iso_file => "CentOS-6.4-i386-minimal.iso",
   :iso_src => "http://yum.singlehop.com/CentOS/6.4/isos/i386/CentOS-6.4-i386-minimal.iso",
   :iso_md5 => "6b5c727fa76fcce7c9ab6213ad3df75a",
