@@ -5,7 +5,7 @@
 * **[CentOS-6.4-x86_64-v20130427.box](http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130427.box):** CentOS 6.4 x86\_64 Minimal *(VirtualBox Guest Additions 4.2.12, Chef 11.4.4, Puppet 3.1.1)*
 * **[CentOS-6.4-i386-v20130427.box](http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-i386-v20130427.box):** CentOS 6.4 i386 Minimal *(VirtualBox Guest Additions 4.2.12, Chef 11.4.4, Puppet 3.1.1)*
 
-Additional, older boxes are available on the [downloads page](http://nrel.github.com/vagrant-boxes/).
+Additional, older boxes are available on the [downloads page](http://nrel.github.io/vagrant-boxes/).
 
 ## How these boxes were built
 
