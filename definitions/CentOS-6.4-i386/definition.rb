@@ -1,7 +1,7 @@
 Veewee::Session.declare({
   :cpu_count => '1',
   :memory_size=> '480',
-  :disk_size => '512000',
+  :disk_size => '204800',
   :disk_format => 'VDI',
   :hostiocache => 'off',
   :os_type_id => 'RedHat',
