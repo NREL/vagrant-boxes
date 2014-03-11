@@ -2,6 +2,10 @@
 
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
+# Fix slow DNS lookups with VirtualBox's DNS proxy:
+# https://github.com/mitchellh/vagrant/issues/1172#issuecomment-9438465
+echo 'options single-request-reopen' >> /etc/resolv.conf
+
 cat > /etc/yum.repos.d/epel.repo << EOM
 [epel]
 name=epel
