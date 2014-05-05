@@ -1,0 +1,72 @@
+{
+  "min_packer_version": "0.6.0",
+  "variables": {
+    "build_version": "{{env `BUILD_VERSION`}}"
+  },
+  "builders": [
+    {
+      "name": "CentOS-6.5-i386-{{user `build_version`}}",
+      "type": "virtualbox-iso",
+      "guest_os_type": "RedHat",
+      "iso_url": "http://yum.singlehop.com/CentOS/6.5/isos/i386/CentOS-6.5-i386-minimal.iso",
+      "iso_checksum": "a4f27ab51d0d2c9d36b68c56b39f752b",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "disk_size": 204800,
+      "http_directory": "http",
+      "boot_command": ["<tab> text ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks.cfg<enter><wait>"],
+      "boot_wait": "10s",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "90m",
+      "shutdown_command": "sudo /sbin/halt -p now",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "480"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    },
+    {
+      "name": "CentOS-6.5-x86_64-{{user `build_version`}}",
+      "type": "virtualbox-iso",
+      "guest_os_type": "RedHat_64",
+      "iso_url": "http://yum.singlehop.com/CentOS/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
+      "iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
+      "iso_checksum_type": "md5",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "disk_size": 204800,
+      "http_directory": "http",
+      "boot_command": ["<tab> text ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks.cfg<enter><wait>"],
+      "boot_wait": "10s",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "90m",
+      "shutdown_command": "sudo /sbin/halt -p now",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "480"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/base.sh",
+        "scripts/chef.sh",
+        "scripts/puppet.sh",
+        "scripts/vagrant.sh",
+        "scripts/virtualbox.sh",
+        "scripts/cleanup.sh",
+        "scripts/info.sh",
+        "scripts/zerodisk.sh"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "compression_level": 9,
+      "output": "./builds/{{.BuildName}}.box"
+    }
+  ]
+}

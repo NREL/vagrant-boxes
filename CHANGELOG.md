@@ -1,3 +1,14 @@
+## v20140504 / 2014-05-04
+
+* Switch build process to use [Packer](http://www.packer.io) for increased automation.
+* Improve Vagrant sudo setup so changes to `/etc/sudoers` don't accidentally enable `requiretty`, breaking Vagrant sudo usage.
+* Increase available swap to 4GB
+* Software Versions
+  * CentOS 6.5
+  * VirtualBox Guest Additions 4.3.10
+  * Chef 11.12.4
+  * Puppet 3.5.1
+
 ## v20140311 / 2014-03-11
 
 * Fix slow DNS resolution when VirutalBox's DNS proxy is used (the default). Fixes [#5](https://github.com/NREL/vagrant-boxes/issues/5).
