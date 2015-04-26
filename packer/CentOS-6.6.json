@@ -5,11 +5,11 @@
   },
   "builders": [
     {
-      "name": "CentOS-6.5-i386-{{user `build_version`}}",
+      "name": "CentOS-6.6-i386-{{user `build_version`}}",
       "type": "virtualbox-iso",
       "guest_os_type": "RedHat",
-      "iso_url": "http://yum.singlehop.com/CentOS/6.5/isos/i386/CentOS-6.5-i386-minimal.iso",
-      "iso_checksum": "a4f27ab51d0d2c9d36b68c56b39f752b",
+      "iso_url": "http://centos.hyve.com/6.6/isos/i386/CentOS-6.6-i386-minimal.iso",
+      "iso_checksum": "8c14c9a379aa7c7477471938ca06447d",
       "iso_checksum_type": "md5",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "disk_size": 204800,
@@ -26,11 +26,11 @@
       ]
     },
     {
-      "name": "CentOS-6.5-x86_64-{{user `build_version`}}",
+      "name": "CentOS-6.6-x86_64-{{user `build_version`}}",
       "type": "virtualbox-iso",
       "guest_os_type": "RedHat_64",
-      "iso_url": "http://yum.singlehop.com/CentOS/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
-      "iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
+      "iso_url": "http://centos.hyve.com/6.6/isos/x86_64/CentOS-6.6-x86_64-minimal.iso",
+      "iso_checksum": "eb3c8be6ab668e6d83a118323a789e6c",
       "iso_checksum_type": "md5",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "disk_size": 204800,
