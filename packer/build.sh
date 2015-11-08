@@ -4,5 +4,5 @@
 export BUILD_VERSION
 
 rm -i builds/*-${BUILD_VERSION}.box
-packer build CentOS-6.6.json
+packer build CentOS-6.7.json
 shasum -a 256 builds/*-${BUILD_VERSION}.box
